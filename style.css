@@ -710,56 +710,80 @@ p {
    =================================== */
 
 .certifications {
-  padding: 80px 0;
-  background-color: #f9f9f9;
+  padding: 6rem 0; /* Increased vertical padding */
+  background: var(--bg-secondary); /* Matches theme background */
+}
+
+.certifications-glass-container {
+  backdrop-filter: blur(14px);
+  background: var(--glass-bg); /* Matches theme's glass */
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 3rem 2.5rem; /* More inner padding */
+  box-shadow: var(--glass-shadow);
+  margin-top: 3rem; /* Space above the grid */
 }
 
 .certifications-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  gap: 2.5rem; /* More spacing between cards */
 }
 
 .cert-card {
-  background: #fff;
-  padding: 20px 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 15px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 8px 24px rgba(0, 0, 0, 0.1); /* Stronger and smoother default shadow */
 }
 
 .cert-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.2),
+    0 16px 48px rgba(0, 0, 0, 0.15); /* Richer, lifted hover shadow */
 }
 
-.cert-icon {
-  font-size: 2rem;
-  color: #0077ff;
-  margin-top: 5px;
+.cert-card img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .cert-details h3 {
   margin: 0 0 8px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  color: var(--text-primary);
 }
 
 .cert-details p {
+  margin: 0 0 10px;
   font-size: 0.95rem;
-  margin-bottom: 10px;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .cert-link {
   font-size: 0.9rem;
-  color: #0077ff;
+  color: var(--accent-primary);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
+
+.cert-link:hover {
+  color: var(--accent-dark);
+}
+
+
+
 
 
 
